@@ -39,9 +39,9 @@ namespace QueenAttack.Tests
     {
       Piece newPiece = new Piece (2, 2, "Queen");
       List<int> result = new List<int> {0,0};
-      List<int> pieceResult = newPiece.GetRemainderList();
-      Assert.AreEqual(result[0], pieceResult[0]);
-      Assert.AreEqual(result[1], pieceResult[1]);
+      newPiece.GetRemainderList();
+      Assert.AreEqual(result[0], newPiece.ComparatorList[0]);
+      Assert.AreEqual(result[1], newPiece.ComparatorList[1]);
     }
   }
 }
