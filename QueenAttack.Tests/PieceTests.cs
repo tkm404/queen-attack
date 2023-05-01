@@ -33,5 +33,15 @@ namespace QueenAttack.Tests
       Piece newPiece = new Piece (1, 5, pieceName);
       Assert.AreEqual(pieceName, newPiece.Name);
     }
+
+    [TestMethod]
+    public void GetRemainderList_GetsRemainderListForPiece_Piece()
+    {
+      Piece newPiece = new Piece (2, 2, "Queen");
+      List<int> result = new List<int> {0,0};
+      List<int> pieceResult = newPiece.GetRemainderList();
+      Assert.AreEqual(result[0], pieceResult[0]);
+      Assert.AreEqual(result[1], pieceResult[1]);
+    }
   }
 }
