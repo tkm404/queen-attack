@@ -1,7 +1,15 @@
-class Program
+using System;
+using System.Collections.Generic;
+using QueenAttack.Models;
+using QueenAttack.UserInterfaceModels;
+
+namespace QueenAttack
 {
-  static void Main()
+  class Program
   {
-    // We'll add user interface code here.
+    static void Main()
+    {
+      Console.WriteLine($"{Banner.Welcome}");
+    }
   }
 }
