@@ -7,6 +7,7 @@ namespace QueenAttack.Models
     public int XCoord { get; set; }
     public int YCoord { get; set; }
     public string Name { get; set; }
+    public int Remainder { get; set; }
 
     public List<int> ComparatorList = new List<int> {};
 
@@ -17,22 +18,11 @@ namespace QueenAttack.Models
       Name = pieceName;
     }
 
-    public List<int> GetRemainderList()
+    public int GetRemainderSum()
     {
-      List<int> remainderList = new List<int> {};
-      remainderList.Add(this.XCoord % 2);
-      remainderList.Add(this.YCoord % 2);
-      this.ComparatorList = remainderList;
-      return remainderList;
-    } 
-
-    public List<int> GetPositionList()
-    {
-      List<int> positionList = new List<int> {};
-      positionList.Add(this.XCoord);
-      positionList.Add(this.YCoord);
-
-      return positionList;
+      int remainderSum = (this.XCoord % 2) + (this.YCoord % 2);
+      this.Remainder = remainderSum;
+      return this.Remainder;
     } 
   }
 }
