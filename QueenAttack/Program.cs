@@ -25,13 +25,33 @@ namespace QueenAttack
       int kingYPos = int.Parse(stringKingY);
       Piece king = new Piece(kingXPos, kingYPos, "King");
       king.GetRemainderSum();
-      Console.WriteLine($"King remainder: {king.Remainder}");
       int queenXPos = int.Parse(stringQueenX);
       int queenYPos = int.Parse(stringQueenY);
       Piece queen = new Piece(queenXPos, queenYPos, "Queen");
       queen.GetRemainderSum();
-      Console.WriteLine($"Queen remainder: {queen.Remainder}");
+      Console.WriteLine("They are...");
+      if (queen.Remainder == king.Remainder)
+      {
+        Console.WriteLine("CHECK'D SON!");
+      }
+      else
+      {
+        Console.WriteLine("Safe... for now...");
+      }
+      Console.WriteLine("Play again? (Y/N)");
+      Console.WriteLine("Enter 'Y' to start again, or enter 'N' to quit... like a coward.");
+      string userResponse = Console.ReadLine();
+      if (userResponse == "Y" || userResponse == "y")
+      {
+        Main();
+      }
+      else
+      {
+        Console.WriteLine("See you next time... WATCH YOUR BACK!");
+      }
     }
+
+    
 
 
   }

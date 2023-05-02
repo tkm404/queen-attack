@@ -21,7 +21,7 @@ namespace QueenAttack.Models
     public int GetRemainderSum()
     {
       int remainderSum = (this.XCoord % 2) + (this.YCoord % 2);
-      this.Remainder = remainderSum;
+      this.Remainder = remainderSum % 2;
       return this.Remainder;
     } 
   }
