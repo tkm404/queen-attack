@@ -9,8 +9,6 @@ namespace QueenAttack.Models
     public string Name { get; set; }
     public int Remainder { get; set; }
 
-    public List<int> ComparatorList = new List<int> {};
-
     public Piece(int xPos, int yPos, string pieceName)
     {
       XCoord = xPos;
@@ -18,11 +16,11 @@ namespace QueenAttack.Models
       Name = pieceName;
     }
 
-    public int GetRemainderSum()
+    public void GetRemainderSum()
     {
       int remainderSum = (this.XCoord % 2) + (this.YCoord % 2);
       this.Remainder = remainderSum % 2;
-      return this.Remainder;
+      // return this.Remainder;
     } 
   }
 }
